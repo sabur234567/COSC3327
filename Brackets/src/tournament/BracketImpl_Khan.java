@@ -73,6 +73,7 @@ public class BracketImpl_Khan<P> extends BracketAbstract<P>
 		//convert the set into an arrayList so I can loop through it to check each particpant and see if they are still valid
 		List<P> arrayOfGrouping = new ArrayList<P>(grouping);
 		
+		
 		for(int i=0;i<arrayOfGrouping.size();i++)
 		{
 			int currentIndexOfMember = getParticipantIndex(arrayOfGrouping.get(i));
@@ -127,15 +128,6 @@ public class BracketImpl_Khan<P> extends BracketAbstract<P>
 		}
 	}
 	
-	//Find two groupings a and b at a lower level such that a U b = grouping with a INT b = empty
-	// takes in a circle and looks at the child circles from it.  
-	// rv.size() = 2
-	private Set<Set<P>> getSubordinateGroupings(Set<P> grouping)
-	{
-		assert grouping.size() > 1 : "grouping.size() = " + grouping.size() + " <= 1!: grouping = " + grouping;
-		throw new RuntimeException("NOT IMPLEMENTED!");
-	}
-	
 	private int getParticipantIndex(P participant)
 	{
 		return predictions.lastIndexOf(participant);
@@ -143,7 +135,7 @@ public class BracketImpl_Khan<P> extends BracketAbstract<P>
 
 	private static int getParentIndex(int childIndex)
 	{
-		//fix this bc if the grouping is switched for the equals method then im screwed... there is no left or right side for a bracket!
+		//child index is referring down the tree
 		
 		return (childIndex -1)/2;
 	}
