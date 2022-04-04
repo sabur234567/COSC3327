@@ -1,2 +1,2 @@
 # COSC3327
-Data Structures &amp; Algorithms
+Data Structures &amp; Algorithms class 2020
